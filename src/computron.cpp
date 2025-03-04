@@ -161,10 +161,8 @@ void execute(std::array<int, memorySize>& memory,
         break;
         
       default:
-        // any instruction required
         break;
     };
-    // You may modify the below while condition if required
   }while(opCodeToCommand(*opCodePtr) != Command::halt);
 };
 

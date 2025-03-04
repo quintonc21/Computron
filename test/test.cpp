@@ -26,12 +26,10 @@ TEST_CASE("Execute function tests") {
     int instructionRegister = 0;
     size_t operationCode = 0;
     size_t operand = 0;
-    std::vector<int> inputs = {4, 5}; // Sample inputs for read command
+    std::vector<int> inputs = {4, 5}; 
 
-    // Load a sample valid program into memory
     load_from_file(memory, "p1.txt");
 
-    // Test case 1: Execute the program with valid memory
     SECTION("Valid execution") {
         REQUIRE_NOTHROW(execute(memory, &accumulator, &instructionCounter, 
                                  &instructionRegister, &operationCode, 

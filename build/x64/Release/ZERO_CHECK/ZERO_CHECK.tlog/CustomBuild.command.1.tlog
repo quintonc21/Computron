@@ -1,0 +1,10 @@
+^C:\USERS\ADMIN\ONEDRIVE\DOCUMENTS\VSCODE\COMPUTRON\BUILD\CMAKEFILES\D870672D8F699A4DA27AC88B7D029F07\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Admin/OneDrive/Documents/VSCode/Computron -BC:/Users/Admin/OneDrive/Documents/VSCode/Computron/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Admin/OneDrive/Documents/VSCode/Computron/build/computron.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -138,7 +138,9 @@ void execute(std::array<int, memorySize>& memory,
 
       case Command::divide:
          // as above do it for division
-         if(validWord((*acPtr)/(memory[*opPtr])) && (memory[*opPtr] != 0))
+         if(memory[*opPtr]==0)
+              throw std::runtime_error("invalid_input");
+         if(validWord((*acPtr)/(memory[*opPtr])))
               word = (*acPtr)/(memory[*opPtr]);
         else
                throw std::runtime_error("invalid_input");
@@ -161,8 +163,10 @@ void execute(std::array<int, memorySize>& memory,
         break;
         
       default:
+        // any instruction required
         break;
     };
+    // You may modify the below while condition if required
   }while(opCodeToCommand(*opCodePtr) != Command::halt);
 };
 
@@ -175,20 +179,20 @@ void dump(std::array<int, memorySize>& memory, int accumulator,
        size_t instructionCounter, size_t instructionRegister,
        size_t operationCode, size_t operand) {
 
-std::cout << "Memory: " << "\n" << "    0    1     2    3    4   5    6    7    8    9";
+       std::cout << "Memory: " << "\n" << "    0    1     2    3    4   5    6    7    8    9";
 
-for (size_t i = 0; i < memorySize; i++) {
-    if (i % 10 == 0)
-           std::cout << "\n" << i << " ";
-    
-    if (memory[i] > 0)
-           std::cout << "+" << memory[i];
-    else if (memory[i] == 0) 
-           std::cout << "+0000"; 
-    else 
-           std::cout << memory[i]; 
-}
+       for (size_t i = 0; i < memorySize; i++) {
+       if (i % 10 == 0)
+              std::cout << "\n" << i << " ";
+       
+       if (memory[i] > 0)
+              std::cout << "+" << memory[i];
+       else if (memory[i] == 0) 
+              std::cout << "+0000"; 
+       else 
+              std::cout << memory[i]; 
+       }
 
-std::cout << std::endl;  
+       std::cout << std::endl;  
 };
 

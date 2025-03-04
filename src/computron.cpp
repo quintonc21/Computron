@@ -24,8 +24,7 @@ void load_from_file(std::array<int, memorySize>& memory, const std::string& file
      // Check if the instruction is valid using the validWord function
     // If the instruction is valid, store it in memory at position 'i' and increment 'i'
     // If the instruction is invalid, throw a runtime error with the message "invalid_input"
-    if(i>memorySize)
-       throw std::runtime_error("no_more_memory");
+
     if(validWord(instruction)) {
        memory[i] = instruction;
        i++;
@@ -139,8 +138,8 @@ void execute(std::array<int, memorySize>& memory,
 
       case Command::divide:
          // as above do it for division
-         if(validWord((*acPtr)/(memory[*opPtr])))
-               word = (*acPtr)/(memory[*opPtr]);
+         if(validWord((*acPtr)/(memory[*opPtr])) && (memory[*opPtr] != 0))
+              word = (*acPtr)/(memory[*opPtr]);
         else
                throw std::runtime_error("invalid_input");
         (*icPtr)++;
@@ -194,3 +193,4 @@ for (size_t i = 0; i < memorySize; i++) {
 
 std::cout << std::endl;  
 };
+

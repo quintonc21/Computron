@@ -1,5 +1,0 @@
-C:/Users/Admin/OneDrive/Documents/VSCode/Computron/build/CMakeFiles/computron.dir
-C:/Users/Admin/OneDrive/Documents/VSCode/Computron/build/CMakeFiles/my_test.dir
-C:/Users/Admin/OneDrive/Documents/VSCode/Computron/build/CMakeFiles/RUN_TESTS.dir
-C:/Users/Admin/OneDrive/Documents/VSCode/Computron/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Admin/OneDrive/Documents/VSCode/Computron/build/CMakeFiles/ZERO_CHECK.dir
